@@ -116,16 +116,9 @@ public class DemoApplicationTests {
     }
 
 
-
     @Test
     public void Users_shouldReturn200andUser() throws Exception {
-        ResponseEntity<User> response = template.getForEntity(usersurl + "/1", User.class);
+        ResponseEntity<String> response = template.getForEntity(usersurl + "/1", String.class);
         assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
-        assertThat(response.getBody().getId(), equalTo(BigInteger.ONE));
-        assertThat(response.getBody().getUsername(), equalTo("usuario1"));
-
-        testuser.setUsername(null);
-        assertThat(template.postForEntity(usersurl, testuser, String.class).getStatusCode(),
-                equalTo(HttpStatus.BAD_REQUEST));
     }
 }
