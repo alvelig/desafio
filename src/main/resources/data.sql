@@ -1,0 +1,1 @@
+INSERT INTO "USERS" VALUES (NULL, 'usuario1', 'noimage');
