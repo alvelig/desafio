@@ -11,7 +11,7 @@
 
  Firefox (Gecko)   | Chrome	| Internet Explorer	| Opera     | Safari
  ----------------- | ------ | ----------------- | --------- | ------
- 3.6 (1.9.2)       | 	7	|   10[2]	        | 12.02[3]  |	6.0
+ 3.6 (1.9.2)       | 	7	|   10  	        | 12.02     |	6.0
 
 
 ## Instalación y arranque
