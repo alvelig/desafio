@@ -17,10 +17,11 @@
 ## Instalación y arranque
 
 * Instalar requerimientos
-* git clone https://github.com/alvelig/desafio.git
-* cd desafio
-* mvn spring-boot:run
-* abre en el navegador http://localhost:8080/
+* Correr los siguientes comandos:
+```
+git clone https://github.com/alvelig/desafio.git && cd desafio && mvn spring-boot:run
+```
+* Abrir en el navegador http://localhost:8080/
 
 ## Funcionamiento
 
