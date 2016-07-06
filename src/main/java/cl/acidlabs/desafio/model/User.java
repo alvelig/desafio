@@ -1,6 +1,5 @@
 package cl.acidlabs.desafio.model;
 
-import com.oracle.webservices.internal.api.databinding.DatabindingMode;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import java.math.BigInteger;
