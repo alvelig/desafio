@@ -54,7 +54,9 @@ hibernate.format_sql = true
 ### Urls de los servicios
 
 Por defecto la Url base del recurso Users es:
+```
 url.users = users
+```
 
 Debe ser definido sin "/" al inicio y sin comillas
 
