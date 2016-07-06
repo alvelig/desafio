@@ -43,7 +43,7 @@ public class UsersController {
         }
     }
 
-    @RequestMapping( value="/users/{id}" )
+    @RequestMapping( value="${url.users}/{id}" )
     public ResponseEntity<?> getUsers(@PathVariable("id") BigInteger id) {
         if(id == null) {
             return ResponseEntity.ok(userService.findAllUsers());

@@ -106,6 +106,12 @@ public class DemoApplicationTests {
         assertThat(response.getStatusCode(), equalTo(HttpStatus.UNAUTHORIZED));
     }
 
+    @Test
+    public void Users_shouldReturn403forOtherRoutes() throws Exception {
+        ResponseEntity<String> response = template.getForEntity(base + "/someotherroute", String.class);
+        assertThat(response.getStatusCode(), equalTo(HttpStatus.FORBIDDEN));
+    }
+
     /*
         Si alguno de los parámetros no contiene datos se retorna 400 (Bad Request)
      */
