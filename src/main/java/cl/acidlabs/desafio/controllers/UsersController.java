@@ -8,6 +8,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -40,15 +41,6 @@ public class UsersController {
 
             return new ResponseEntity("UNAUTHORIZED! Go away!!!", HttpStatus.UNAUTHORIZED);
 
-        }
-    }
-
-    @RequestMapping( value="${url.users}/{id}" )
-    public ResponseEntity<?> getUsers(@PathVariable("id") BigInteger id) {
-        if(id == null) {
-            return ResponseEntity.ok(userService.findAllUsers());
-        } else {
-            return ResponseEntity.ok(userService.findById(id));
         }
     }
 
