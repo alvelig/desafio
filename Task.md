@@ -32,20 +32,24 @@ Si alguno de los parámetros no contiene datos se retorna 400 (Bad Request)
 
 2.- Por cada registro ingresado se debe poder consultar una URL, la misma que se devuelve en el header location al guardar datos. Esta URL es pública, por lo tanto se puede consultar desde cualquier navegador. Se espera que el navegador haga render de la imagen (se debe ver), también se debe mostrar el nombre de usuario. Un ejemplo de URL es http://localhost:8080/users/1
 
-Cliente
+#### Cliente
 
 Se debe implementar una aplicación cliente que realice la llamada al webservice, donde el usuario ingrese los datos en un formulario multipart. Dicho formulario debe tener un campo de texto y un campo tipo file para la imagen, luego la aplicación debe transformar/encodear esta imagen a base64 para ser enviada al Webservice.
 
 Una vez que el usuario hace submit, se espera que muestre el siguiente mensaje para cada código HTTP:
-201: OK
-401: Unauthorized
-400: Bad Request
-Comentarios Finales
-Desarrolle su solución utilizando el framework Spring de Java
-Realice el mapeo de objetos con la librería Jackson o similar.
-Las URLs de los servicios deben estar en un archivo .properties. ­ Puede utilizar las librerías que estime conveniente.
-Debe subir el código a un repositorio en Github con un README explicativo para correr la aplicación y comprobar el funcionamiento de ambos casos (HTTP 200 y 401)
-Se considera extra points el agregar tests automatizados
-Queda a criterio del programador el método para persistir el nombre de usuario e imagen
-Cuando se dice que se puede consultar de forma pública, se apunta obviamente a ambiente local y más que nada a que no es necesario ser algún tipo de usuario en particular para visualizar la imagen y nombre, basta solo con poner la URL en el navegador
+* 201: OK
+* 401: Unauthorized
+* 400: Bad Request
+
+
+### Comentarios Finales
+
+* Desarrolle su solución utilizando el framework Spring de Java
+* Realice el mapeo de objetos con la librería Jackson o similar.
+* Las URLs de los servicios deben estar en un archivo .properties. ­ Puede utilizar las librerías que estime conveniente.
+* Debe subir el código a un repositorio en Github con un README explicativo para correr la aplicación y comprobar el funcionamiento de ambos casos (HTTP 200 y 401)
+* Se considera extra points el agregar tests automatizados
+* Queda a criterio del programador el método para persistir el nombre de usuario e imagen
+* Cuando se dice que se puede consultar de forma pública, se apunta obviamente a ambiente local y más que nada a que no es necesario ser algún tipo de usuario en particular para visualizar la imagen y nombre, basta solo con poner la URL en el navegador
+
 No existe una limitación de tiempo para entregar la prueba, ya que también esto depende la agenda y trabajo de cada postulante. Sin embargo, menor tiempo también será considerado como extra points. (Entre 4 y 5 días es un plazo razonable)
