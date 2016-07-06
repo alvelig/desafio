@@ -127,6 +127,8 @@ public class DemoApplicationTests {
                 equalTo(HttpStatus.BAD_REQUEST));
     }
 
+
+
     @Test
     public void Users_shouldReturn200andUser() throws Exception {
         ResponseEntity<User> response = template.getForEntity(usersurl + "/1", User.class);

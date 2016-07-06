@@ -32,7 +32,7 @@ public class UsersController {
 
             userService.saveUser(user);
 
-            headers.set("Location", "/users/" + 1);
+            headers.set("Location", "/users/" + user.getId());
 
             return new ResponseEntity<>(headers, HttpStatus.CREATED);
 
@@ -50,6 +50,11 @@ public class UsersController {
         } else {
             return ResponseEntity.ok(userService.findById(id));
         }
+    }
+
+    @RequestMapping( value="${url.users}/all" )
+    public ResponseEntity<?> getUsers() {
+        return ResponseEntity.ok(userService.findAllUsers());
     }
 
 }

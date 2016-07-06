@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.form-container {
+    display: inline-block;
+    width: 300px;
+}
+
+.form-list {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 30px;
+}
+
+.form-list h5{
+    margin-top: 0;
+}
+
+#preview {
+    margin-top: 15px;
+}
+
+#preview img {
+    max-width: 100%;
+}
+
+.list-group-item img {
+    width: 1.75em;
+    float: right;
+    margin-top: -0.2em;
+    margin-left: 10px;
+}
+
+.hint {
+    display: none;
+}
+
+.has-error .hint {
+    display: block;
+}
