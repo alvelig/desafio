@@ -63,8 +63,8 @@ function onSubmit(event) {
             contentType : 'application/json; charset=UTF-8',
             encode      : true
         })
-        .done(function(data) {
-            $("#hints").html(data.statusCode == 201 ? "OK" : data.statusText);
+        .done(function(data, textStatus, jqXHR) {
+            $("#hints").html( jqXHR.status == 201 ? "OK" : textStatus);
             getUsersList();
         })
         .fail(function(data) {
