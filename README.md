@@ -35,12 +35,21 @@ El formulario valida los datos ingresados, sin embargo permite al presionar "Ent
 
 ## Configuración custom
 
-Todos los ajustes previstos para la aplicación se encuentran en el archivo application.properties en la raiz del proyecto.
+Todos los ajustes previstos para la aplicación se encuentran en el archivo `application.properties` en la raiz del proyecto.
 
 ### BBDD
 
 No se requiere instalar ninguna base de datos, la aplicación va con H2:mem embedida.
-Pero puede elegir la capa de persistencia a su gusto simplemente cambiando datos en
+Pero puede elegir la capa de persistencia a su gusto simplemente cambiando datos en `application.properties`:
+```
+jdbc.driverClassName = org.h2.Driver
+jdbc.url = jdbc:h2:mem:dataSource;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+jdbc.username = sa
+jdbc.password =
+hibernate.dialect = org.hibernate.dialect.H2Dialect
+hibernate.show_sql = true
+hibernate.format_sql = true
+```
 
 ### Urls de los servicios
 
