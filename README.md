@@ -53,12 +53,13 @@ hibernate.format_sql = true
 
 ### Urls de los servicios
 
-Por defecto la Url base del recurso Users es:
+Por defecto la Url base del recurso Users e index son:
 ```
-url.users = users
+url.index = /
+url.users = /users
 ```
 
-Debe ser definido sin "/" al inicio y sin comillas
+Debe ser definido con "/" al inicio y sin comillas
 
 
 

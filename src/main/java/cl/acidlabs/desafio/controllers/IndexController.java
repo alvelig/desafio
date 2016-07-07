@@ -1,7 +1,8 @@
 package cl.acidlabs.desafio.controllers;
 
-import cl.acidlabs.desafio.model.DAO.UserService;
+import cl.acidlabs.desafio.model.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,12 +17,15 @@ public class IndexController {
     @Autowired
     UserService userService;
 
-    @RequestMapping("/")
-    String index(){
+    @Value("${url.users}")
+    String usersUrl;
+
+    @RequestMapping("${url.index}")
+    String index(Model model){
         return "index";
     }
 
-    @RequestMapping( value="${url.users}/{id}", method= RequestMethod.GET )
+    @RequestMapping( value="${url.users}/{id}", method=RequestMethod.GET )
     public String getUsers(@PathVariable("id") BigInteger id, Model model) {
         model.addAttribute("user", userService.findById(id));
         return "user";

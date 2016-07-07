@@ -58,7 +58,7 @@ function onSubmit(event) {
 
     $.ajax({
             type        : 'POST',
-            url         : '/users',
+            url         : usersUrl,
             data        : JSON.stringify(formData),
             contentType : 'application/json; charset=UTF-8',
             encode      : true
@@ -77,14 +77,14 @@ function onSubmit(event) {
 
 function getUsersList() {
 
-    $.get("/users/all")
+    $.get(usersUrl + "/all")
         .success(function(data) {
             console.log(data);
             var userslist = $("#users-list");
             userslist.html("");
             data.forEach(function(user) {
                 userslist.append(
-                    '<li class="list-group-item"><a href="/users/' + user.id + '">' +
+                    '<li class="list-group-item"><a href="' + usersUrl + "/" + user.id + '">' +
                         user.username +
                         '<img src="' + user.image + '" />' +
                     '</a></li>');

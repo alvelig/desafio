@@ -1,4 +1,4 @@
-package cl.acidlabs.desafio.model.DAO;
+package cl.acidlabs.desafio.model.services;
 
 import cl.acidlabs.desafio.model.User;
 

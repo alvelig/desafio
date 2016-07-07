@@ -1,5 +1,6 @@
-package cl.acidlabs.desafio.model.DAO;
+package cl.acidlabs.desafio.model.services;
 
+import cl.acidlabs.desafio.model.DAO.UserDAO;
 import cl.acidlabs.desafio.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

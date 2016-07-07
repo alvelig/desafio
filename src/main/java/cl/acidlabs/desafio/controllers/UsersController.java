@@ -1,28 +1,24 @@
 package cl.acidlabs.desafio.controllers;
 
-import cl.acidlabs.desafio.model.DAO.UserService;
+import cl.acidlabs.desafio.model.services.UserService;
 import cl.acidlabs.desafio.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.math.BigInteger;
-import java.util.Collection;
 
-/**
- * Created by alex on 7/5/16.
- */
 @RestController
 public class UsersController {
 
     @Autowired
     UserService userService;
+
+    @Value("${url.users}/")
+    String usersUrl;
 
     @RequestMapping( value="${url.users}", method=RequestMethod.POST)
     public ResponseEntity<?> postUser(@RequestBody @Valid User user) {
@@ -33,7 +29,7 @@ public class UsersController {
 
             userService.saveUser(user);
 
-            headers.set("Location", "/users/" + user.getId());
+            headers.set("Location", usersUrl + user.getId());
 
             return new ResponseEntity<>(headers, HttpStatus.CREATED);
 
